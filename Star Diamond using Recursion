@@ -1,0 +1,69 @@
+#include<stdio.h>
+int i,c;
+void prints(s){
+	if(s<=0)
+	return ;
+	printf("  ");
+	prints(s-1);
+}
+
+void printstar(n){
+	if(n==0)
+	return ;
+	
+	printf("* ");
+	printstar(n-1);
+	
+}
+
+void pattern(n){
+	if(n==0)
+	return ;
+	
+	prints(n-1);
+	printstar(i);
+	i+=2;
+	printf("\n");
+	pattern(n-1);
+	
+}
+void prints2(s){
+	if(s==0)
+	return ;
+	prints2(s-1);
+	printf("  ");
+	
+}
+
+void printstar2(n){
+	if(n<=0)
+	return ;
+	printf("* ");
+	printstar2(n-1);
+}
+void pattern2(n){
+	if(n<=0)
+	return ;
+	prints2(i);
+	printstar2(c);
+	i+=1;
+	c-=2;
+	printf("\n");
+	pattern2(n-1);
+}
+int main(){
+	int n;
+	
+	scanf("%d",&n);
+	i=1;
+    pattern(n);
+    
+    
+	i=1;
+	c=2*n-1;
+	c-=2;
+	pattern2(n-1);
+	
+	
+	return 0;
+}
