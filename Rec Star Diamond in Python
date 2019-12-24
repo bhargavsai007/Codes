@@ -1,0 +1,66 @@
+def prints1(n):
+    if n<=0:
+        return n
+    
+    else:
+        print('  ',end='')
+        prints1(n-1)
+        
+
+def printstar1(n):
+    if n<=0:
+        return 
+    else:
+        print('*',end=' ')
+        printstar1(n-1)
+        
+        
+        
+def pattern1(n):
+    global i
+    if n<=0:
+        return 
+    else:
+        prints1(n-1)
+        printstar1(i)
+        i+=2
+        print()
+        pattern1(n-1)
+
+        
+def prints2(n):
+    if n<=0:
+        return
+    else:
+        print('  ',end='')
+        prints2(n-1)
+        
+def printstar2(n):
+    if n<=0:
+        return 
+    else:
+        print('*',end=' ')
+        printstar2(n-1)
+        
+def pattern2(n):
+    global i
+    global c
+    if n<=0:
+        return 
+    
+    else:
+        prints2(i)
+        printstar2(c)
+        i+=1
+        c-=2
+        print()
+        pattern2(n-1)
+        
+
+n=int(input())
+i=1
+pattern1(n)
+i=1
+c=2*n-3
+
+pattern2(n-1)
