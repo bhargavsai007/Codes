@@ -1,0 +1,34 @@
+from collections import deque
+
+top=-1
+opened=deque()
+closed=deque()
+
+s=input()
+l=len(s)
+
+for i in range(l):
+    if s[i]=='(':
+        opened.append(i)
+        top+=1
+        
+    elif s[i]==')' and top==-1:
+        closed.append(i)
+        
+    else:
+        opened.pop()
+        top-=1
+        
+for i in closed:
+    opened.append(i)
+    
+opened=sorted(opened)
+lo=len(opened)
+j=0
+for i in range(l):
+    if j<lo and opened[j]==i:
+        j+=1
+        
+    else:
+        print(s[i],end='')
+        
